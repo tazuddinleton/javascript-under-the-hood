@@ -39,7 +39,7 @@ logName.apply(person, ['en', 'es']);
 
 var person2 = {
     firstname: 'Jane',
-    lastname: 'Dow'
+    lastname: 'Doe'
 }
 
 console.log(person.getFullname.apply(person2, ['Bengali', 'Arabic']));
