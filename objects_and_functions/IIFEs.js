@@ -1,4 +1,4 @@
-// Expression returns value
+// Expression returns value but Statements don't 
 
 // function statement
 function greet(name){
@@ -24,6 +24,10 @@ var greeting = function(name){
 console.log(greeting);
 
 (function(name){
-    var greeting = 'Inside IIFE: Hello'+ ' '+ name;
+    var greeting = 'Inside IIFE: Hello'+ ' '+ name;        
     console.log(greeting);
 }('John')); // The classic IIFE 
+
+console.log(greeting);
+
+
