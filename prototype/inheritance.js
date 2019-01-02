@@ -1,14 +1,18 @@
+// The base Employee class
+module.exports = {};
 function Employee() {
     this.name = "";
     this.dept = "general";
 }
-
+module.exports.Employee = Employee;
+// Manager class inherits from Employee
 function Manager() {
     Employee.call(this);
     this.reports = [];
 }
 Manager.prototype = Object.create(Employee.prototype);
 Manager.prototype.constructor = Manager;
+module.exports.Manager = Manager;
 
 function WorkerBee() {
     Employee.call(this);
@@ -16,6 +20,7 @@ function WorkerBee() {
 }
 WorkerBee.prototype = Object.create(Employee.prototype);
 WorkerBee.prototype.constructor = WorkerBee;
+module.exports.WorkerBee = WorkerBee;
 
 function SalesPerson() {
     WorkerBee.call(this);
@@ -24,6 +29,7 @@ function SalesPerson() {
 }
 SalesPerson.prototype = Object.create(WorkerBee.prototype);
 SalesPerson.prototype.constructor = SalesPerson;
+module.exports.SalesPerson = SalesPerson;
 
 function Engineer() {
     WorkerBee.call(this);
@@ -32,6 +38,4 @@ function Engineer() {
 }
 Engineer.prototype = Object.create(WorkerBee.prototype);
 Engineer.prototype.constructor = Engineer;
-
-var eng = new Engineer();
-console.log.call(this, eng.saySmth);
+module.exports.Engineer = Engineer;
